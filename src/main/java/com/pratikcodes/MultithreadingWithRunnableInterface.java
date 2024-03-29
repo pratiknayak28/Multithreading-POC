@@ -10,6 +10,6 @@ public class MultithreadingWithRunnableInterface implements Runnable {
 
     @Override
     public void run() {
-        System.out.println("Hi "+ Thread.currentThread().getName());
+        System.out.println("Hi " + Thread.currentThread().getName());
     }
 }

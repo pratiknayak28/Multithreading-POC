@@ -9,11 +9,11 @@ public class MultithreadingWithThreadClass extends Thread {
         t1.start();
         t2.start();
     }
+
     @Override
     public void run() {
-        System.out.println("Hi "+ currentThread().getName());
+        System.out.println("Hi " + currentThread().getName());
     }
-
 
 
 }
