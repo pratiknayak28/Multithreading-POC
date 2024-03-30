@@ -9,7 +9,7 @@ public class ThreadLifeCycle extends Thread {
         System.out.println("Hello world!");
 
         ThreadLifeCycle t1 = new ThreadLifeCycle("First Thread"); //New
-        ThreadLifeCycle t2 = new ThreadLifeCycle("Second Thread");
+        ThreadLifeCycle t2 = new ThreadLifeCycle("Second Thread");//New
         t1.start(); //Runnable
         t2.start();
     }
@@ -24,7 +24,7 @@ public class ThreadLifeCycle extends Thread {
 
 /* There are various stages in a Thread Lifecycle
 1. New: Thread is created but not ready to run
-2. Runnable: Thread is part of runnable pool but not yet picked by the scheduler to run , whenever start method is called , the thread moves to runnable pool
+2. Runnable: Thread is part of runnable pool but not yet picked by the scheduler/OS to run , whenever start method is called , the thread moves to runnable pool
 3. Running: Thread is running
 4. Dead/Terminated: After the execution of last line of run method , Thread is terminated
 5.Wait: Discussed Later
@@ -33,8 +33,8 @@ public class ThreadLifeCycle extends Thread {
 
 /* Can we reuse a dead thread ?  / Can we call start method again for a Thread ?
  * Ans - No ,
- * The thread class contains a global variable call threadStatus which is used to track the state of the thread ,
- *  a thread in new state has status as 0 , whereas a used thread will have a non-zero status so when
+ * The thread class contains a global variable called threadStatus which is used to track the state of the thread ,
+ * a thread in new state has status as 0 , whereas a used thread will have a non-zero status so when
  * start method is called again it will throw IllegalThreadStateException */
 
 // we cannot reuse a normal thread, but we can reuse a thread in thread pool -> discussed later
